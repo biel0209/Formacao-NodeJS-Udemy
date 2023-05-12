@@ -1,5 +1,4 @@
-# nodeJS-Udemy
-Curso Formação NodeJS da Udemy - https://www.udemy.com/course/formacao-nodejs/
+# Sistema de perguntas e respostas
 
 ## Tecnologias utilizadas:
 - EJS
@@ -7,3 +6,4 @@ Curso Formação NodeJS da Udemy - https://www.udemy.com/course/formacao-nodejs/
 - Node
 - MySQL
 - Nodemon
+- Bootstrap v5.0 (install: npm install bootstrap)
