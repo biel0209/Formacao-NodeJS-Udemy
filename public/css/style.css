@@ -1,8 +1,25 @@
-h3{
-  color: blue
+:root{
+  --amarelo--: #f2d527;
+  --bege--: #f9e8ba;
+  --marrom--: #6e532d;
+  --azul--: #71a0b0;
+  --verde--: #acd0c4;
+  --background--: #eceff1;
 }
 
 body{
-  background-color: aliceblue;
+  background-color: var(--background--);
 }
 
+#navbar-page{
+  background-color: var(--verde--)
+}
+
+#formulario-pergunta{
+  margin-top: 5vh;
+}
+
+#btn-perguntar{
+  background-color: var(--verde--);
+  /* color: rgb(240, 13, 13); */
+}

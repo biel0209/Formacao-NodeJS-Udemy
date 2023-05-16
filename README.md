@@ -1,9 +1,23 @@
 # Sistema de perguntas e respostas
 
 ## Tecnologias utilizadas:
+
+### Front-end
 - EJS
-- Express
+- Bootstrap v4.5
+
+### Back-end
 - Node
-- MySQL
+- Express
+  - ```npm install express --save```
 - Nodemon
-- Bootstrap v5.0 (install: npm install bootstrap)
+  - ```npm install -g nodemon```
+- BodyParser (bib do Express)
+  - ```npm install body-parser --save```
+- Sequelize
+  - ```npm install --save sequelize```
+  - ```npm install --save mysql2```
+
+### Banco de Dados
+- MySQL (local)
+- MySQL WorkBench
