@@ -1,6 +1,39 @@
 <%- include('partials/header') %>
 <body>
   <%- include('partials/navbar') %>
-  <h1>Lista de perguntas</h1>
+  <div class="container">
+    <hr>
+    <h3>Perguntas</h3>
+    <hr>
+    <span class="perguntar-ordenar">
+      <a href="/perguntar" class="btn" id="btn">Perguntar</a>
+      <form class="dropdown" action="/" method="POST">
+        <a class="btn dropdown-toggle" href="#" role="button" 
+        id="btn" data-toggle="dropdown" aria-haspopup="true" 
+        aria-expanded="false" name="">Ordenar por</a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="/order-az">A-Z</a>
+          <a class="dropdown-item" href="/order-za">Z-A</a>
+          <a class="dropdown-item" href="/order-recent">Mais recentes</a>
+          <a class="dropdown-item" href="/order-old">Mais antigos</a>
+        </div>
+      </form>
+    </span>
+    <hr>
+    <% perguntas.forEach(pergunta => { %>
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h6><%= pergunta.titulo %></h6>
+        </div>
+        <div class="card-footer">
+          <button class="btn" id="btn">Responder</button>
+        </div>
+      </div>
+
+    <% }) %>
+  </div>
 </body>
 <%- include('partials/footer') %>
+
+

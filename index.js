@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const connection = require('./database/database');
-const perguntaModel = require('./database/Pergunta');
+const Pergunta = require('./database/Pergunta');
 
 // Database
 connection
@@ -23,7 +23,14 @@ app.use(bodyParser.json());
 
 // Rotas
 app.get('/', (req, res) => {
-  res.render('index');  
+  Pergunta.findAll({ raw: true, order:[
+    ['id', 'DESC'] // ASC = Crescente || DESC = Decrescente
+  ] }).then(perguntas => {
+    console.log(perguntas);
+    res.render('index',{
+      perguntas: perguntas
+    });  
+  });
 });
 
 app.get('/perguntar', (req, res) => {
@@ -33,9 +40,39 @@ app.get('/perguntar', (req, res) => {
 app.post('/salvarpergunta', (req, res) => {
   let titulo = req.body.titulo;
   let descricao = req.body.descricao;
-  res.send("Formulário recebido!" + "Título: " + titulo + " " + "Descrição: " + 
-            descricao);
+  Pergunta.create({ // cria uma pergunta no banco de dados
+    titulo: titulo,
+    descricao: descricao
+  }).then(() => {
+    res.redirect('/'); // redireciona para a página inicial
+  });
 });
+
+app.get('/:order', (req, res) => {
+  let order = req.params.order
+  if(!order){
+    res.redirect('/');
+  }else{
+    if (order == 'order-az') {
+      order = ['titulo', 'ASC'];
+    }else if (order == 'order-za') {
+      order = ['titulo', 'DESC'];
+    }else if (order == 'order-recent') {
+      order = ['id', 'DESC'];
+    }else if (order == 'order-old') {
+      order = ['id', 'ASC']
+    }
+    Pergunta.findAll({ raw: true, order:[order] })
+    .then(perguntas => {
+      console.log(perguntas);
+      res.render('index',{
+        perguntas: perguntas
+      });  
+    });
+  }
+});
+
+
 
 app.listen(8080, () => {
   console.log('Servidor executando na porta 8080');

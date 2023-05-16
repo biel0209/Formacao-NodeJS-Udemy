@@ -4,6 +4,7 @@
   --marrom--: #6e532d;
   --azul--: #71a0b0;
   --verde--: #acd0c4;
+  --verde2--: #acd0c4b0;
   --background--: #eceff1;
 }
 
@@ -19,7 +20,15 @@ body{
   margin-top: 5vh;
 }
 
-#btn-perguntar{
+#btn{
   background-color: var(--verde--);
-  /* color: rgb(240, 13, 13); */
+}
+
+#btn:hover{
+  background-color: var(--verde2--);
+}
+
+.perguntar-ordenar{
+  display: flex;
+  justify-content: space-between;
 }
