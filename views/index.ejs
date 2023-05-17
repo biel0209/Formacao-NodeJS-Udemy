@@ -24,13 +24,12 @@
       <br>
       <div class="card">
         <div class="card-body">
-          <h6><%= pergunta.titulo %></h6>
+          <h5><%= pergunta.titulo %></h5>
         </div>
         <div class="card-footer">
-          <button class="btn" id="btn">Responder</button>
+          <a href="/pergunta/<%= pergunta.id %>" class="btn" id="btn">Responder</a>
         </div>
       </div>
-
     <% }) %>
   </div>
 </body>

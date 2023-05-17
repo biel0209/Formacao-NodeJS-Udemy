@@ -1,0 +1,45 @@
+<%- include('partials/header') %>
+<body>
+  <%- include('partials/navbar') %>
+  <div class="container">
+    <hr>
+    <a href="/" class="btn" id="btn">Voltar</a>
+    <hr>
+    <h6><%= pergunta.titulo %></h6>
+    <p><%= pergunta.descricao %></p>
+    <form method="POST" action="/salvaresposta">
+      <p>Responder:</p>
+      <textarea class="form-control" name="corpo" 
+                placeholder="Digite sua resposta">
+      </textarea>
+      <input type="hidden" name="pergunta" value="<%= pergunta.id %>">
+      <br>
+      <button class="btn" id="btn">Responder</button>
+    </form>
+    <hr>
+    <span class="perguntar-ordenar">
+      <h6>Respostas</h6>
+      <form class="dropdown" action="/" method="POST">
+        <a class="btn dropdown-toggle" href="#" role="button" 
+        id="btn" data-toggle="dropdown" aria-haspopup="true" 
+        aria-expanded="false" name="">Ordenar por</a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="/pergunta/<%= pergunta.id %>/order-az">A-Z</a>
+          <a class="dropdown-item" href="/pergunta/<%= pergunta.id %>/order-za">Z-A</a>
+          <a class="dropdown-item" href="/pergunta/<%= pergunta.id %>/order-recent">Mais recentes</a>
+          <a class="dropdown-item" href="/pergunta/<%= pergunta.id %>/order-old">Mais antigos</a>
+        </div>
+      </form>
+    </span>
+    <br>
+    <% respostas.forEach(resposta => { %>
+      <div class="card">
+        <div class="card-body">
+          <p><%= resposta.corpo %></p>
+        </div>
+      </div>
+      <br>
+    <% }) %>
+  </div>
+</body>
+<%- include('partials/footer') %>

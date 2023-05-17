@@ -12,6 +12,11 @@ body{
   background-color: var(--background--);
 }
 
+h4{
+  color: var(--background--);
+  text-shadow: 2px 2px 4px #000000;
+}
+
 #navbar-page{
   background-color: var(--verde--)
 }
