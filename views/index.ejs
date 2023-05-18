@@ -1,4 +1,5 @@
 <%- include('partials/header') %>
+<%- include('partials/header') %>
 <body>
   <%- include('partials/navbar') %>
   <div class="container">
@@ -24,7 +25,10 @@
       <br>
       <div class="card">
         <div class="card-body">
-          <h5><%= pergunta.titulo %></h5>
+          <div class="titulo-date">
+            <%- include('partials/date', {stringData:pergunta.createdAt}) %>
+            <h5><%= pergunta.titulo %></h5>  
+          </div>
         </div>
         <div class="card-footer">
           <a href="/pergunta/<%= pergunta.id %>" class="btn" id="btn">Responder</a>

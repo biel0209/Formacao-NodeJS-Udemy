@@ -5,10 +5,12 @@
     <hr>
     <a href="/" class="btn" id="btn">Voltar</a>
     <hr>
-    <h6><%= pergunta.titulo %></h6>
-    <p><%= pergunta.descricao %></p>
+    <h5>Pergunta:</h5>
+    <p><%= pergunta.titulo %></p>
+    <p>Descrição: <%= pergunta.descricao %></p>
     <form method="POST" action="/salvaresposta">
-      <p>Responder:</p>
+      <hr>
+      <h5>Responder:</h5>
       <textarea class="form-control" name="corpo" 
                 placeholder="Digite sua resposta">
       </textarea>
@@ -18,7 +20,7 @@
     </form>
     <hr>
     <span class="perguntar-ordenar">
-      <h6>Respostas</h6>
+      <h5>Respostas</h5>
       <form class="dropdown" action="/" method="POST">
         <a class="btn dropdown-toggle" href="#" role="button" 
         id="btn" data-toggle="dropdown" aria-haspopup="true" 
@@ -34,8 +36,9 @@
     <br>
     <% respostas.forEach(resposta => { %>
       <div class="card">
-        <div class="card-body">
-          <p><%= resposta.corpo %></p>
+        <div class="card-body ">
+            <%- include('partials/date', {stringData:resposta.createdAt}) %> 
+            <p><%= resposta.corpo %></p> 
         </div>
       </div>
       <br>

@@ -6,6 +6,7 @@
   --verde--: #acd0c4;
   --verde2--: #acd0c4b0;
   --background--: #eceff1;
+  --date--: rgb(105, 105, 105);
 }
 
 body{
@@ -36,4 +37,9 @@ h4{
 .perguntar-ordenar{
   display: flex;
   justify-content: space-between;
+}
+
+.date{
+  font-size: small;
+  color: var(--date--);
 }
