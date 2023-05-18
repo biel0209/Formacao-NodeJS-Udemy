@@ -8,7 +8,7 @@ const Sequelize = require('sequelize');
 // })
 
 // Criando a conexão com o banco de dados MySQL na planet scale
-const connection = new Sequelize('bd01-perguntas-respostas', 'akc8mbwzafgr6p6vyo4c', 'pscale_pw_sV69DRh5wNT0kAkyJwyhFmOAN8c91dTGGuiMgsgqGnD',{
+const connection = new Sequelize('bd01-perguntas-respostas', 'k8meyoelct9vxgryl0bs', 'pscale_pw_BzccLaKkBBmxwP8Sf0Gxdazrlq4b4EyjdjWflKKNH12',{
   host: 'aws.connect.psdb.cloud',
   dialect: 'mysql',
   dialectOptions: {
