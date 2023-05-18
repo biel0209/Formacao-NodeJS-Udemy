@@ -23,15 +23,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 // Rotas
-app.get('/', (req, res) => {
-  Pergunta.findAll({ raw: true, order:[
-    ['id', 'DESC'] // ASC = Crescente || DESC = Decrescente
-  ] }).then(perguntas => {
-    res.render('index',{
-      perguntas: perguntas
-    });  
-  });
-});
+
 
 app.get('/perguntar', (req, res) => {
   res.render('perguntar');
@@ -92,8 +84,8 @@ app.post('/salvaresposta', (req, res) => {
   });
 });
 
-app.get('/:order', (req, res) => {
-  let order = req.params.order
+app.get('/:order?', (req, res) => {
+  let order = req.params.order;
   if (order == 'order-az') {
     order = ['titulo', 'ASC'];
   }else if (order == 'order-za') {
@@ -102,6 +94,8 @@ app.get('/:order', (req, res) => {
     order = ['id', 'DESC'];
   }else if (order == 'order-old') {
     order = ['id', 'ASC']
+  }else{
+    order = ['id', 'DESC'];
   }
   Pergunta.findAll({ raw: true, order:[order] })
   .then(perguntas => {
