@@ -21,3 +21,8 @@
 ### Banco de Dados
 - MySQL (local)
 - MySQL WorkBench
+
+
+### Features futuras:
+- Implementar um algoritmo inteligente para filtrar perguntas/respostas que sejam
+desrespeitosas/ofensivas.
