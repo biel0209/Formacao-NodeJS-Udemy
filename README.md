@@ -1,5 +1,16 @@
 # Blog com painel administrativo e CRUD completo
 
+## Banco de Dados
+
+### Tabelas
+- Artigo
+- Categoria
+
+### Relacionamentos
+- Uma Categoria possui vários artigos.
+- Um Artigo pertence a uma categoria.
+
+
 ## Tecnologias utilizadas:
 
 ### Front-end
@@ -18,6 +29,8 @@
 - Sequelize
   - ```npm install --save sequelize```
   - ```npm install --save mysql2```
+- Slugify
+  -```npm install --save slugify```
 
 ### Banco de Dados
 - MySQL (local)
