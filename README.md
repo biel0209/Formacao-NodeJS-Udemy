@@ -4,6 +4,7 @@
 
 ### Front-end
 - EJS
+  - ```npm install --save ejs```
 - Bootstrap v4.5
 
 ### Back-end
@@ -13,7 +14,7 @@
 - Nodemon
   - ```npm install -g nodemon```
 - BodyParser (bib do Express)
-  - ```npm install body-parser --save```
+  - ```npm install --save body-parser```
 - Sequelize
   - ```npm install --save sequelize```
   - ```npm install --save mysql2```
