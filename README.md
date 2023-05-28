@@ -1,4 +1,4 @@
-# Sistema de perguntas e respostas
+# Blog com painel administrativo e CRUD completo
 
 ## Tecnologias utilizadas:
 
@@ -24,5 +24,4 @@
 
 
 ### Features futuras:
-- Implementar um algoritmo inteligente para filtrar perguntas/respostas que sejam
-desrespeitosas/ofensivas.
+
