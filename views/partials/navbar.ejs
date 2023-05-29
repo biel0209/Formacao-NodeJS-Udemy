@@ -1,3 +1,32 @@
-<nav class="navbar navbar-dark bg-primary">
-  <a href="" class="navbar-brand">Blog do Programador</a>
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <!-- <img src="/img/logo-devzone.png" alt="DevZone" width="70" height="70"> -->
+      <img src="/img/logo-text-devzone.png" alt="DevZone" width="191" height="66">
+      <!-- <img src="/img/text-devzone.png" alt="DevZone" width="224" height="36"> -->
+      <!-- <img src="/img/slogan-devzone.png" alt="DevZone" width="179" height="23"> -->
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categorias
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/admin/categories">Todas as Categorias</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Desenvolvimento Web</a></li>
+            <li><a class="dropdown-item" href="#">Inteligência Artificial</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
 </nav>
