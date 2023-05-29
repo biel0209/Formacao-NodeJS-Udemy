@@ -31,3 +31,6 @@ button.btn:hover{
   color: #eceff1;
 }
 
+.form-control.me-2:focus{
+  box-shadow: var(--lilac-light--) 0px 0px 0px 0.1rem;
+}
