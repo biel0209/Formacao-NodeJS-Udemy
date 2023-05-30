@@ -51,7 +51,7 @@
               <input type="hidden" name="id" value="<%= category.id %>">
               <button id="edit-category">Editar</button>        
             </form>
-            <form method="POST" action="/admin/categories/delete" id="form-delete-category-<%= index %>" onsubmit="formDelete(event)">
+            <form method="POST" action="/admin/categories/delete" class="form-delete-category" id="form-delete-category-<%= index %>" onsubmit="formDelete(event)">
               <img src="/img/icon-delete.svg" id="icon-delete" title="Deletar" width="25" height="25">
               <input type="hidden" name="id" value="<%= category.id %>">
               <button id="delete-category" data-bs-toggle="modal" data-bs-target="#modalDeleteCategory-<%= index %>">Deletar</button>
