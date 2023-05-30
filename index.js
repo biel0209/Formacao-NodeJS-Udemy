@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const connection = require('./database/connection');
 
+
 const categoriesController = require('./categories/CategoriesController');
 const articlesController = require('./articles/ArticlesController');  
 
@@ -28,8 +29,7 @@ connection
   .catch((err) => {
     console.error('Unable to connect to the database:', err);
   });
-
-
+  
 // Routes
 app.use('/', categoriesController);
 app.use('/', articlesController); 

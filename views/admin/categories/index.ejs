@@ -1,16 +1,42 @@
 <%- include('../../partials/header') %>
 <%- include('../../partials/navbar') %>
-<div class="container">
+<div class="container" id="main-container">
   <hr>
-  <h4>Categorias</h4>
+  <span id="category-new-category">
+    <h4>Categorias</h4>
+    <a class="btn" href="/admin/categories/new" id="new-category">
+      <img src="/img/icon-add-white.svg" title="Nova categoria" width="25" height="25">
+      Nova Categoria
+    </a>
+  </span>
   <hr>
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Título</th>
-        <th scope="col">Slug</th>
-        <th scope="col">Ações</th>
+        <th scope="col">
+          <a href="" id="table-head">
+            ID
+            <img src="/img/icon-filter.svg" id="icon-filter" title="Filtrar" width="20" height="20">
+          </a>
+        </th>
+        <th scope="col">
+          <a href="" id="table-head">
+            Título
+            <img src="/img/icon-filter.svg" title="Filtrar" width="20" height="20">
+          </a>
+        </th>
+        <th scope="col">
+          <a href="" id="table-head">
+            Slug
+            <img src="/img/icon-filter.svg" title="Filtrar" width="20" height="20">
+          </a>
+        </th>
+        <th scope="col">
+          <a href="" id="table-head">
+            Ações
+            <img src="/img/icon-filter.svg" title="Filtrar" width="20" height="20">
+          </a>
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -19,11 +45,27 @@
           <th class="tr-body"><%= category.id %></th>
           <th class="tr-body"><%= category.title %></th>
           <th class="tr-body"><%= category.slug %></th>
-          <th></th>
+          <th>
+            <form method="POST" action="/admin/categories/edit" id="form-edit-category" >
+              <img src="/img/icon-edit.svg" title="Editar" width="25" height="25">
+              <input type="hidden" name="id" value="<%= category.id %>">
+              <button id="edit-category">Editar</button>        
+            </form>
+            <form method="POST" action="/admin/categories/delete" id="form-delete-category">
+              <img src="/img/icon-delete.svg" id="icon-delete" title="Deletar" width="25" height="25">
+              <input type="hidden" name="id" value="<%= category.id %>">
+              <button id="delete-category">Deletar</button>
+            </form>
+          </th>
         </tr>
       <% }) %>
     </tbody>
   </table>
 </div>
+<script>
+  const titleElement = document.getElementById('title-html');
+  const dynamicTitle = "Categorias - DevZone";
+  titleElement.textContent = dynamicTitle;
+</script>
 <%- include('../../partials/footer') %>
 

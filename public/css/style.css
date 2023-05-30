@@ -2,14 +2,12 @@
 
 :root{
   --background--: #eceff1;
+  --nav--: #212429;
   --lilac-light--: #BF05F2;
   --lilac-medium--: #7C05F2;
   --lilac-dark--: #8A24A6;
   --black--: #022601;
   --gray--: #404040;
-
-
-
 }
 
 body{
@@ -17,20 +15,121 @@ body{
   background-color: var(--background--);
 }
 
+/* #main-container{
+  background-color: white;
+} */
+
+table.table{
+  margin-left: auto;
+  margin-right: auto  ;
+}
+
+th{
+  text-align: center;
+}
+
 th.tr-body{
   font-weight: 400;
 }
 
-button.btn{
+.btn{
   background-color: var(--lilac-light--);
   color: #eceff1;
 }
 
-button.btn:hover{
+.btn:hover{
   background-color: var(--lilac-medium--);
   color: #eceff1;
 }
 
 .form-control.me-2:focus{
   box-shadow: var(--lilac-light--) 0px 0px 0px 0.1rem;
+}
+
+#category-new-category{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#category-new-category h4{
+  margin-bottom: 0;
+}
+
+#form-edit-category{
+  display: inline;
+}
+
+#form-delete-category{
+  display: inline;
+}
+
+#delete-category{
+  color: rgb(224, 0, 0);
+  border: none;
+  font-weight: 600;
+}
+
+#delete-category:hover{
+  text-decoration: underline;
+}
+
+#edit-category{
+  border: none;
+  font-weight: 500;
+  color: var(--lilac-medium--);
+}
+
+#edit-category:hover{
+  text-decoration: underline;
+}
+
+a#new-category{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 5px;
+}
+
+a#table-head{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
+a#table-head:hover{
+  text-decoration: underline;
+}
+
+.box{
+	width: 250px;
+	height: 20px;
+	background-color: var(--nav--);
+	border-radius: 30px;
+	display: flex;
+	align-items: center;
+	padding: 20px;
+  border: 0.1em solid #777777;
+}
+
+.box:focus{
+  box-shadow: var(--lilac-light--) 0px 0px 0px 0.1rem;
+}
+
+.box > a > i {
+	font-size: 15px;
+	color: #777;
+}
+
+.box > input{
+	flex: 1;
+	height: 30px;
+	border: none;
+  font-size: 15px;
+  background-color: var(--nav--);
+	outline: none;
+	padding-left: 10px;
+  color: var(--background--);
 }

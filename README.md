@@ -38,4 +38,4 @@
 
 
 ### Features futuras:
-
+- Adicionar filtro de ordenação na tabela da listagem de categorias

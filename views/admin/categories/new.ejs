@@ -4,7 +4,7 @@
   <hr>
   <div class="card">
     <div class="card-header">
-      <h5>Cadastrar nova categoria</h5>
+      <h5>Criar nova categoria</h5>
     </div>
     <div class="card-body">
       <form method="POST" action="/admin/categories/save">
@@ -15,4 +15,9 @@
     </div>
   </div>
 </div>
+<script>
+  const titleElement = document.getElementById('title-html');
+  const dynamicTitle = "Criar nova categoria - DevZone";
+  titleElement.textContent = dynamicTitle;
+</script>
 <%- include('../../partials/footer') %>
