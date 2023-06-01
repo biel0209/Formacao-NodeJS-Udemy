@@ -14,9 +14,11 @@ router.post('/admin/categories/save', (req, res) => {
       title: title,
       slug: slugify(title)
     }).then(() => {
-      res.redirect('/admin/categories/new');
+      res.redirect('/admin/categories');
     });
-  }
+  }else{
+    res.redirect('/admin/categories/new');
+  } 
 });
 
 router.get('/admin/categories', (req, res) => {
@@ -35,6 +37,44 @@ router.post('/admin/categories/delete', (req, res) => {
         }
       })
       .then(() => {
+        res.redirect('/admin/categories');
+      });
+    }else{
+      res.redirect('/admin/categories');
+    }
+  }else{
+    res.redirect('/admin/categories');
+  }
+});
+
+router.get('/admin/categories/edit/:id', (req, res) => {
+  let id = req.params.id;
+  if(isNaN(id)){
+    res.redirect('/admin/categories');
+  }else{
+    Category.findByPk(id).then(category => {
+      if(category != undefined){
+        res.render('admin/categories/edit', {category: category});
+      }else{
+        res.redirect('/admin/categories');
+      }
+      })
+  }
+});
+
+router.post('/admin/categories/update', (req, res) => {
+  let id = req.body.id;
+  let title = req.body.title;
+  if(id != undefined){
+    if(!isNaN(id)){
+      Category.update({
+        title: title,
+        slug: slugify(title)
+      }, {
+        where: {
+          id: id
+        }
+      }).then(() => {
         res.redirect('/admin/categories');
       });
     }else{

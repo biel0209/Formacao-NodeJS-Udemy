@@ -46,7 +46,7 @@
           <th class="tr-body"><%= category.title %></th>
           <th class="tr-body"><%= category.slug %></th>
           <th>
-            <form method="POST" action="/admin/categories/edit" id="form-edit-category" >
+            <form method="GET" action="/admin/categories/edit/<%= category.id %>" id="form-edit-category" >
               <img src="/img/icon-edit.svg" title="Editar" width="25" height="25">
               <input type="hidden" name="id" value="<%= category.id %>">
               <button id="edit-category">Editar</button>        
@@ -55,7 +55,7 @@
               <img src="/img/icon-delete.svg" id="icon-delete" title="Deletar" width="25" height="25">
               <input type="hidden" name="id" value="<%= category.id %>">
               <button id="delete-category" data-bs-toggle="modal" data-bs-target="#modalDeleteCategory-<%= index %>">Deletar</button>
-              <%- include('../../partials/modal-delete-category', {category: category.title, index: index }) %>
+              <%- include('modal-delete-category', {category: category.title, index: index }) %>
             </form>
           </th>
         </tr>

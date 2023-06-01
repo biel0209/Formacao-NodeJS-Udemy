@@ -1,0 +1,25 @@
+<%- include('../../partials/header') %>
+<%- include('../../partials/navbar') %>
+<div class="container">
+  <hr>
+  <div class="card">
+    <div class="card-header">
+      <h5>Novo artigo</h5>
+    </div>
+    <div class="card-body">
+      <form method="POST" action="/admin/categories/save">
+        <input class="form-control" type="text" name="title" placeholder="Título do artigo">
+        <br>
+        <textarea class="form-control" name="body"></textarea>
+        <br>
+        <button class="btn">Cadastrar</button>
+      </form>
+    </div>
+  </div>
+</div>
+<%- include('../../partials/footer') %>
+<script>
+  const titleElement = document.getElementById('title-html');
+  const dynamicTitle = "Criar nova categoria - DevZone";
+  titleElement.textContent = dynamicTitle;
+</script>
