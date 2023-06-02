@@ -38,4 +38,5 @@
 
 
 ### Features futuras:
+- Adicionar a propriedade "required" no input de formulários para tornar alguns campos obrigatórios
 - Adicionar filtro de ordenação na tabela da listagem de categorias
